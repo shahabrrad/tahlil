@@ -8,10 +8,12 @@ export class MemberList extends Component {
         getMembers: PropTypes.func.isRequired,
     };
 
-    componentDidMount() {
+    /*componentDidMount() {
+        this.props.getMembers(this.props.group_id);
+    }*/
+    componentDidUpdate() {
         this.props.getMembers(this.props.group_id);
     }
-
     render() {
         return (
             <Fragment>
