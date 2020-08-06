@@ -5,7 +5,13 @@ import ChatList from './Chat/ChatList'
 export class GroupDetails extends Component {
     state = {
         message: '',
-        createdClient: null
+        createdClient: null,
+        money2share: 0,
+    }
+    addDebt(id, money) {
+        this.setState({
+            money2share: money
+        });
     }
     /*createClient() {
             const socket = () => new SockJS(urls.socketUrl);
@@ -43,8 +49,8 @@ export class GroupDetails extends Component {
 
         return (
             <div>
-                <MemberForm group_id={this.props.group_id} />
-                <MembersList group_id={this.props.group_id} />
+                <MemberForm group_id={this.props.group_id} addshare={this.addDebt.bind(this)} />
+                <MembersList group_id={this.props.group_id} debt={this.state.money2share} />
                 {/* <ChatList messages={this.state.messages} />
                 <div
                                 style={{

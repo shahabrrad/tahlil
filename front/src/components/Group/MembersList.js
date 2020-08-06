@@ -24,7 +24,7 @@ export class MemberList extends Component {
                             <th>First Name</th>
                             <th>Last Name</th>
                             <th>Email</th>
-                            <th>Message</th>
+                            <th>share</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,7 +33,7 @@ export class MemberList extends Component {
                                 <td>{member.firstName}</td>
                                 <td>{member.lastName}</td>
                                 <td>email</td>
-                                <td>message</td>
+                                <td>{this.props.debt / this.props.members_of_group.length}</td>
 
                             </tr>
                         ))}

@@ -16,7 +16,11 @@ export class MemberForm extends Component {
     };
 
     onChange = (e) => this.setState({ [e.target.name]: e.target.value });
+    addDebt = (e) => {
+        e.preventDefault();
+        this.props.addshare(this.state.group_id, this.state.debt);
 
+    }
     onSubmit = (e) => {
         e.preventDefault();
         const { identifier, group_id } = this.state;
@@ -55,7 +59,7 @@ export class MemberForm extends Component {
 
                 <div>
                     <h2>Add to Shared debt wallet:</h2>
-                    <form onSubmit={null} style={{ margin: "0 auto" }}>
+                    <form onSubmit={this.addDebt} style={{ margin: "0 auto" }}>
                         <div className="form-group">
                             <label>amount</label>
                             <input
