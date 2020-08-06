@@ -9,8 +9,9 @@ export class GroupDetails extends Component {
         money2share: 0,
     }
     addDebt(id, money) {
+        let m2s = this.state.money2share
         this.setState({
-            money2share: money
+            money2share: Number(m2s) + Number(money)
         });
     }
     /*createClient() {

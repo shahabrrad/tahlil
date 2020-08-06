@@ -5,6 +5,7 @@
     left: 0;
     background: #38d39f;
     height: 36px;
+    z-index: 80;
 }
 .toolbar_navigation{
     display: flex;

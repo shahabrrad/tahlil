@@ -3,6 +3,7 @@ import { GET_GROUPS, DELETE_GROUP, ADD_GROUP, CLEAR_GROUPS, ADD_MEMBER, GET_MEMB
 const initialState = {
     groups: [],
     members_of_group: [],
+    shares: [],
 };
 
 export default function (state = initialState, action) {
@@ -11,6 +12,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 members_of_group: [...state.members_of_group, action.payload],
+                shares: [...state.shares, 0]
             }
         case GET_GROUPS:
             return {
@@ -21,6 +23,7 @@ export default function (state = initialState, action) {
             return {
                 ...state,
                 members_of_group: action.payload,
+                shares: Array(action.payload.length).fill(0),
             };
         case DELETE_GROUP:
             return {

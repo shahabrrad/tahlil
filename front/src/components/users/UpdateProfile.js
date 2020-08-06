@@ -33,6 +33,11 @@ export class UpdateProfile extends Component {
     handleLastNameChange = (e) => {
         this.setState({ lastName: e.target.value });
     };
+
+    handleCancel = () => {
+        this.setState({ open: false });
+    };
+
     handleClose = () => {
         //console.log('HERE');
         const profile = {
